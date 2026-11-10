@@ -1,0 +1,14 @@
+{
+    "name": "Ritmo.Adaptive",
+    "rootNamespace": "Ritmo.Adaptive",
+    "references": ["Ritmo.Core", "Ritmo.NBack"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

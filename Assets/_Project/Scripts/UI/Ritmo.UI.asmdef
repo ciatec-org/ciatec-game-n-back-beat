@@ -1,0 +1,14 @@
+{
+    "name": "Ritmo.UI",
+    "rootNamespace": "Ritmo.UI",
+    "references": ["Ritmo.Core", "Ritmo.NBack", "Ritmo.Profiles", "Ritmo.Feedback", "Ritmo.Mediator", "UnityEngine.UI", "Unity.TextMeshPro"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

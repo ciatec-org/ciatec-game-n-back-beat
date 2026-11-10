@@ -1,0 +1,14 @@
+{
+    "name": "Ritmo.NBack",
+    "rootNamespace": "Ritmo.NBack",
+    "references": ["Ritmo.Core", "Ritmo.Audio"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

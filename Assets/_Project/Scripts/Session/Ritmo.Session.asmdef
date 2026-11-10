@@ -1,0 +1,14 @@
+{
+    "name": "Ritmo.Session",
+    "rootNamespace": "Ritmo.Session",
+    "references": ["Ritmo.Core", "Ritmo.NBack", "Ritmo.Adaptive", "Ritmo.Profiles", "Ritmo.Telemetry", "Ritmo.Feedback"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

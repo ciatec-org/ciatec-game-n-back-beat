@@ -1,0 +1,14 @@
+{
+    "name": "Ritmo.Profiles",
+    "rootNamespace": "Ritmo.Profiles",
+    "references": ["Ritmo.Core"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
