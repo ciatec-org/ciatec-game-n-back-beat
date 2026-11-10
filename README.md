@@ -37,24 +37,32 @@ Unity (C#)  ──── telemetria JSON/REST ────▶  FastAPI (Python)
 
 ## Estrutura
 
+A raiz do repositório é o próprio projeto Unity.
+ 
 ```
-ritmo/
-├── docs/       # SGDD, PPI, protocolo
-├── backend/    # FastAPI
-└── unity/
-    └── Assets/
-        ├── _Project/
-        │   ├── Scripts/            # Core, Audio, NBack, Adaptive, Mediator, Profiles,
-        │   │                       # Training, Feedback, Session, Telemetry, Reports, UI
-        │   ├── ScriptableObjects/  # Tracks, Stimuli, Profiles, PhaseSettings, SafetyLimits
-        │   ├── Scenes/             # Bootstrap, Profile, Training, Gameplay, SessionEnd
-        │   ├── Prefabs/
-        │   └── Tests/              # EditMode, PlayMode, Performance
-        ├── Plugins/
-        └── ThirdParty/
+.
+├── Assets/
+│   ├── _Project/
+│   │   ├── Scripts/            # Core, Audio, NBack, Adaptive, Mediator, Profiles,
+│   │   │                       # Training, Feedback, Session, Telemetry, Reports, UI
+│   │   ├── ScriptableObjects/  # Tracks, Stimuli, Profiles, PhaseSettings, SafetyLimits
+│   │   ├── Scenes/             # Bootstrap, Profile, Training, Gameplay, SessionEnd
+│   │   ├── Prefabs/
+│   │   └── Tests/              # EditMode, PlayMode, Performance
+│   ├── Plugins/
+│   └── ThirdParty/
+├── Docs/                       # SGDD, PPI, protocolo
+├── Packages/
+├── ProjectSettings/
+├── .gitattributes
+├── .gitignore
+└── README.md
 ```
 
+O backend FastAPI (motor adaptativo) não faz parte deste repositório: **[definir onde ficará]**.
+ 
 Parâmetros terapêuticos (N, BPM, duração, tentativas) ficam em `ScriptableObjects`, nunca no código.
+
 
 ## Assembly Definitions
 
