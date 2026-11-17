@@ -1,0 +1,14 @@
+{
+    "name": "Ritmo.Training",
+    "rootNamespace": "Ritmo.Training",
+    "references": ["Ritmo.Core", "Ritmo.NBack", "Ritmo.Feedback", "Ritmo.Profiles"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,14 @@
+{
+    "name": "Ritmo.Feedback",
+    "rootNamespace": "Ritmo.Feedback",
+    "references": ["Ritmo.Core"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

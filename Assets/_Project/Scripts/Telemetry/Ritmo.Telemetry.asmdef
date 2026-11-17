@@ -1,0 +1,14 @@
+{
+    "name": "Ritmo.Telemetry",
+    "rootNamespace": "Ritmo.Telemetry",
+    "references": ["Ritmo.Core"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,14 @@
+{
+    "name": "Ritmo.Editor",
+    "rootNamespace": "Ritmo.Editor",
+    "references": ["Ritmo.Core", "Ritmo.NBack", "Ritmo.Adaptive"],
+    "includePlatforms": ["Editor"],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
