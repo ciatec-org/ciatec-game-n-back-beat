@@ -16,7 +16,7 @@ Template v1.0  |  2026  |  CIATec
 
 **Nome do jogo:** *Ritmo*
 
-**Versão do documento:** *v1.1 — decisões do orientador de 26/11/2026*
+**Versão do documento:** *v1.2 — a adaptação de dificuldade é do backend, e o dispositivo-alvo é o PC (decisões do orientador de 26/11/2026)*
 
 **Projeto vinculado:** ATGCP — Adaptive Therapeutic Game Calibration Protocol
 
@@ -32,7 +32,7 @@ Template v1.0  |  2026  |  CIATec
 
 **Última atualização:** 26/11/2026
 
-**Histórico:** v1.1 (26/11/2026): o playtest do protótipo web (tutorial jogável, N à vista, fase de 6 blocos, placar) e as decisões do orientador (pausa com saída, entrada em 60 BPM, perguntas e fases por partida, BPM que só desce, 10 s de resposta, perfil e N de entrada pelo mediador, N de S2 subindo com 3 fases a 100%, 15 min de sessão, menu, avaliação, piso em N=0, música como estímulo, S3) · v1.0 (21/09/2026): ciclo PPI inicial.
+**Histórico:** v1.2 (26/11/2026): decisão do orientador, padrão CIATEC: a regra de adaptação de dificuldade (§5.3.1, §5.3.2, o ajuste das tentativas na §4.3, a expansão da fase na §5.2, o efeito da avaliação na §5.1, a regressão por erros na §11.2 e as faixas de progressão da §11.3) roda no backend, que a executa e devolve os parâmetros de cada fase pela API; o jogo recebe, aplica e grava os parâmetros, e sem a API usa parâmetros fixos. As regras não mudaram: ganharam a nota de onde rodam. Os controles do mediador (§5.3.3) e a regressão pedida pela criança ficam no jogo, e a trava prevalece sobre o que o backend devolve. E, "pra simplificar", o dispositivo-alvo é o PC (Windows, mouse e teclado): a web, o mobile e o toque ficam fora desta versão (notas em §2.2, §3A, §5.3.3, §7.4, §10.2, §13 e §13A); o relatório gerado pelo jogo e a exportação saem desta versão (o que importa é a telemetria local), e a build é só Windows, sem a Linux (notas em §2.3, §7.4 e §13A) · v1.1 (26/11/2026): o playtest do protótipo web (tutorial jogável, N à vista, fase de 6 blocos, placar) e as decisões do orientador (pausa com saída, entrada em 60 BPM, perguntas e fases por partida, BPM que só desce, 10 s de resposta, perfil e N de entrada pelo mediador, N de S2 subindo com 3 fases a 100%, 15 min de sessão, menu, avaliação, piso em N=0, música como estímulo, S3) · v1.0 (21/09/2026): ciclo PPI inicial.
 
 ## 2  CONCEITO DO JOGO
 
@@ -58,9 +58,9 @@ Realização de escuta ativa de sequência sonora, *active recall* de elementos 
 
 ### 2.2  Gênero e Plataforma
 **Gênero:** jogo eletrônico musical, *serious game* terapêutico;
-**Plataforma:** web, desktop, mobile;
+**Plataforma:** web, desktop, mobile; *(v1.2, decisão do orientador de 26/11/2026, "pra simplificar": o dispositivo-alvo é o **PC**, Windows, com mouse e teclado; web, mobile e Linux ficam fora desta versão; a build é só Windows.)*
 **Modo de jogo:** majoritariamente single player, podendo haver métodos multiplayer sendo desenvolvidos eventualmente;
-**Tecnologia de interação:** Cliques com cursor de *mouse*, ou interação com *touchscreen*
+**Tecnologia de interação:** Cliques com cursor de *mouse*, ou interação com *touchscreen* *(v1.2, decisão do orientador de 26/11/2026, "pra simplificar": o dispositivo-alvo é o **PC**, Windows, com mouse e teclado; o *touchscreen* fica fora desta versão.)*
 
 ### 2.3  Público-Alvo
 
@@ -68,7 +68,7 @@ Realização de escuta ativa de sequência sonora, *active recall* de elementos 
 
 2) Para usuários de Suporte 3 (S3), o jogo não tem expectativa de uso autônomo, exigindo mediação clínica intensa (auxílio físico e verbal constante) e atuando em níveis de dificuldade (N) adaptados ou reduzidos a zero (associação direta).
 
-3) Responsáveis legais e profissionais mediadores clínicos (terapeutas, psicólogos) com experiência direta no atendimento dessa população, que utilizarão relatórios gerados pelo jogo para acompanhamento.
+3) Responsáveis legais e profissionais mediadores clínicos (terapeutas, psicólogos) com experiência direta no atendimento dessa população, que utilizarão relatórios gerados pelo jogo para acompanhamento. *(v1.2, decisão do orientador de 26/11/2026, como nos outros jogos: o relatório para o terapeuta e a exportação anonimizada saem desta versão; o jogo grava a telemetria em arquivo local no PC, e o relatório vem de fora do jogo.)*
 
 ## 3  OBJETIVO TERAPÊUTICO E EDUCACIONAL
 
@@ -95,7 +95,7 @@ O ensino de teoria musical ou o desenvolvimento de habilidades rítmicas profiss
 
 | GP | Evidência sintetizada do PPI | Objetivo de design | Funcionalidades previstas |
 | --- | --- | --- | --- |
-| GP-01 | Nem todos os usuários utilizam *tablet* ou *smartphone* no cotidiano | Tornar acessível para diferentes tipos de usabilidade | Desenvolvimento multiplataforma: para celulares e computadores. Suporte a *Touchscreen*, *desktop* e *web* |
+| GP-01 | Nem todos os usuários utilizam *tablet* ou *smartphone* no cotidiano | Tornar acessível para diferentes tipos de usabilidade | Desenvolvimento multiplataforma: para celulares e computadores. Suporte a *Touchscreen*, *desktop* e *web* *(v1.2, decisão do orientador de 26/11/2026, "pra simplificar": o dispositivo-alvo é o **PC**, Windows, com mouse e teclado.)* |
 | GP-02 | Existe usuário inserido em mais de um transtorno psicológico (TEA + TDAH + TOD) | Evitar deixar o jogo inflexível, excludente e desestimulante | Coleta de dados referentes à atenção/memória por parte de sistema *backend*, adaptabilidade dos questionamentos durante *gameplay* e da dificuldade|
 | GP-03 |Todos os usuários são TEA, logo existe a chance de sobrecarga sensorial e eventual crise | Tornar o jogo menos atritivo no quesito sensorial | Multipla escolha de gêneros musicais ou tipos de som, além de questionários sobre preferências pessoais para interface e afins |
 | GP-04 | Sessões prolongadas ou sem controle de carga podem aumentar fadiga e reduzir adesão | Preservar segurança e tolerabilidade | Limite de duração e critérios de interrupção |
@@ -179,6 +179,8 @@ Para cada fase, teremos **três questionamentos** (o mediador ajusta de 1 a 5). 
 
 Errar faz com que seja decrementado um **contador de tentativas restantes**. Inicialmente, ele será definido com a quantidade de **3 tentativas**. Porém, esse valor poderá ser alterado dinamicamente pelo sistema a partir do seu aprendizado obtido a respeito do usuário, ou, no caso de pessoas que necessitem de mais suporte, por um mediador no controle das variáveis principais do jogo.
 
+*(Nota v1.2: desde a decisão do orientador de 26/11/2026, a regra de adaptação é do backend, no padrão CIATEC: o ajuste automático das tentativas é calculado pelo backend e chega ao jogo pela API; a segunda zerada na mesma fase faz o jogo pedir os parâmetros de novo antes da reescuta, e a redução da §5.3.2 vem do backend.)*
+
 A fase avança quando as perguntas dela acabam sem que o contador de tentativas restantes tenha zerado. Caso o contador zere, o conjunto de *timestamps* atual é escutado novamente, o contador volta cheio e as perguntas recomeçam. **O padrão de estímulos será idêntico**. A segunda zerada na mesma fase reduz a carga (§5.3.2).
 
 **Justificativa clínica:**
@@ -230,6 +232,7 @@ Acreditamos que a divisão do onboarding em três camadas atenderá à alta hete
 
 - O jogo avalia o nível de memória de curto prazo (especialmente para usuários com TDAH associado).   
   *Forma (decisão do protótipo web, aprovada pelo orientador em 26/11/2026):* cada partida de S1 e S2 abre com duas fases curtas de avaliação no N do perfil, que só podem baixar a entrada, nunca subir: abaixo de 50% de acertos nas duas, a primeira fase da partida pergunta em N=0 até três acertos. S3 não faz a avaliação.
+  *(Nota v1.2: desde a decisão do orientador de 26/11/2026, a regra de adaptação é do backend, no padrão CIATEC: o jogo joga as duas fases e manda o resultado; o backend aplica a regra acima e devolve a entrada pela API.)*
 
 - A progressão de dificuldade se dá pelo aumento do número "N" de passos atrás que devem ser lembrados, ou pela complexidade/velocidade do timestamp musical.   
 
@@ -242,10 +245,13 @@ Acreditamos que a divisão do onboarding em três camadas atenderá à alta hete
 - Velocidade (BPM): Alteração no andamento da música ou ritmo do metrônomo, podendo variar de **60 BPM até 120 BPM** .
 
 - Tamanho da fase: número de blocos sonoros antes da pausa, com 6 blocos de base (faixa 4 a 12, ajuste do mediador), permitindo expansão (mais blocos) se a criança estiver engajada. A duração em segundos sai do tamanho e do BPM (6 blocos a 60 BPM = 6 s).
+  *(Nota v1.2: desde a decisão do orientador de 26/11/2026, a regra de adaptação é do backend, no padrão CIATEC: a expansão é decidida pelo backend e chega ao jogo pela API; o ajuste do mediador fica no jogo.)*
 
 ### 5.3  Calibração de Intensidade Terapêutica
 
 A calibração da intensidade define como o jogo manipula as variáveis da Seção 5.2 para manter o usuário na zona ótima de desafio, evitando tanto o tédio quanto a sobrecarga sensorial. Esta calibração será dividida em dois eixos: **Automática (Sistêmica)** e **Manual (Mediador)**.
+
+**Onde a calibração roda (v1.2, decisão do orientador de 26/11/2026, padrão CIATEC).** A calibração automática (itens 1 e 2) roda no **backend** (§7.4): o jogo manda o estado ao fim de cada fase e antes de cada reescuta, o backend executa as regras abaixo e devolve os parâmetros da fase seguinte (N, BPM, tentativas e tamanho), e o jogo os aplica e grava o que recebeu. Enquanto a API não existe, e sem rede, o jogo usa parâmetros fixos (os de entrada do perfil, com os ajustes do mediador), sem regra. A calibração manual (item 3) fica no jogo: o que o mediador escolhe vai ao backend, e a trava prevalece sobre o que ele devolve.
 
 #### 1. Calibração Automática (Motor Dinâmico)
 
@@ -259,6 +265,8 @@ O ajuste dinâmico da dificuldade não dependerá apenas de condicionais simples
 
 Para garantir a segurança clínica e evitar que o algoritmo extrapole limites, regras rígidas de segurança devem ser estabelecidas:
 
+*(Nota v1.2: desde a decisão do orientador de 26/11/2026, a regra de adaptação é do backend, no padrão CIATEC: estas regras são executadas pelo backend, via API; o jogo não as calcula.)*
+
 - Aumento de Carga: O N-Back só poderá subir caso o jogador alcance 100% de precisão em 3 fases consecutivas na mesma partida (a contagem recomeça a cada partida), em S1 e em S2. *(Como no protótipo web validado pelo orientador em 26/11/2026.)*
 - Redução de Carga: Dois erros consecutivos (zerar o contador de tentativas duas vezes na mesma fase) forçam a redução imediata da velocidade (BPM) ou a queda do nível do N-Back: primeiro o BPM desce 20, até 60; já em 60, o N desce 1, até 1. A fase recomeça no degrau de baixo, com o contador cheio.
 - O BPM só desce: na v1, nenhuma regra automática o sobe; ele sobe só pelo mediador. A partida entra sempre em 60 BPM e no N do perfil (ou nos valores que o mediador definiu no painel), e cada partida recomeça desses valores, sem herdar o que a anterior alcançou. *(Decidido pelo orientador em 26/11/2026.)*
@@ -268,11 +276,11 @@ Para garantir a segurança clínica e evitar que o algoritmo extrapole limites, 
 
 Para contemplar o público de Suporte 3 (S3) ou sessões mediadas de Suporte 2 (S2), o sistema fornecerá um Dashboard clínico ou atalhos de teclado para o terapeuta:
 
-- Trava de Variável: O terapeuta poderá fixar o nível de **N-Back** (ex: travar em N=1) ou travar o **BPM**, impedindo que o algoritmo dinâmico aumente a dificuldade se notar sinais físicos de irritabilidade no paciente antes que o sistema detecte falhas computacionais.
+- Trava de Variável: O terapeuta poderá fixar o nível de **N-Back** (ex: travar em N=1) ou travar o **BPM**, impedindo que o algoritmo dinâmico aumente a dificuldade se notar sinais físicos de irritabilidade no paciente antes que o sistema detecte falhas computacionais. *(v1.2: a trava fica no jogo e vale sobre os parâmetros que o backend devolve: segura o que sobe acima do travado e deixa passar o que desce.)*
 - Interrupção Branda: Um controle para transformar o próximo questionamento instantaneamente em um "Treino Pré-Jogo" (Associação direta N=0), permitindo a autorregulação do paciente sem a necessidade de fechar e reiniciar o software.
 - N de entrada: o mediador escolhe no painel o N com que a partida começa, de 0 a 3; o padrão é o N do perfil (0 em S3, 1 em S1 e S2), e trocar o perfil volta ao padrão. Vale a partir da partida seguinte. *(Como no protótipo web validado pelo orientador em 26/11/2026.)*
 - Os ajustes do mediador e a trava passam de uma partida para a seguinte e valem até o fim da sessão. *(Decidido pelo orientador em 26/11/2026.)*
-- Perfil: o mediador escolhe o perfil da criança (S1, S2 ou S3) no painel; o padrão é S1. O painel abre por um atalho de teclado ou, no toque, segurando a engrenagem do canto por 3 s e tocando um segundo alvo, para a criança não o abrir por acaso. *(Decidido pelo orientador em 26/11/2026.)*
+- Perfil: o mediador escolhe o perfil da criança (S1, S2 ou S3) no painel; o padrão é S1. O painel abre por um atalho de teclado ou, no toque, segurando a engrenagem do canto por 3 s e tocando um segundo alvo, para a criança não o abrir por acaso. *(v1.2, decisão do orientador de 26/11/2026, "pra simplificar": o dispositivo-alvo é o **PC**, Windows, com mouse e teclado: o painel abre pelo atalho de teclado; o gesto na engrenagem, que era o acesso pelo toque, fica fora desta versão.)* *(Decidido pelo orientador em 26/11/2026.)*
 
 ## 6  EXPERIÊNCIA PRETENDIDA  —  PLAYER EXPERIENCE (MDA: AESTHETICS)
 
@@ -298,8 +306,8 @@ As dimensões prioritárias para esta população são Sensation (Sensação) e 
 ### 7.4  Technology  —  Plataforma e Implementação
 
 - Motor de Jogo: Unity (C#) para renderização visual e gestão de interface de utilizador.   
-- Motor Adaptativo (Backend): Servidor desenvolvido em Python com FastAPI, responsável por receber a telemetria do Unity em tempo real, calcular as recompensas e o próximo estado e devolver os parâmetros ajustados da fase.
-- Plataformas: Publicação para WebGL, Desktop (Linux/Windows) e Mobile, garantindo a acessibilidade através de toques no ecrã ou cliques de mouse.
+- Motor Adaptativo (Backend): Servidor desenvolvido em Python com FastAPI, responsável por receber a telemetria do Unity em tempo real, calcular as recompensas e o próximo estado e devolver os parâmetros ajustados da fase. *(v1.2, decisão do orientador de 26/11/2026, padrão CIATEC: a regra de adaptação inteira, §5.3.1 e §5.3.2, roda aqui; o jogo recebe os parâmetros por uma interface e, sem a API, usa parâmetros fixos. A telemetria fica em arquivo local até a API existir.)*
+- Plataformas: Publicação para WebGL, Desktop (Linux/Windows) e Mobile, garantindo a acessibilidade através de toques no ecrã ou cliques de mouse. *(v1.2, decisão do orientador de 26/11/2026, "pra simplificar": o dispositivo-alvo é o **PC**, Windows, com mouse e teclado: a build de entrega é só a Windows (a Linux também fica fora); a telemetria é salva em arquivo local no PC; WebGL e Mobile ficam fora desta versão.)*
 
 ## 8  MAPEAMENTO LM-GM
 > ⚙ *LM-GM: Learning Mechanics e Game Mechanics (Arnab et al., 2015). Seção exclusiva do GDD científico.*
@@ -392,7 +400,7 @@ As dimensões prioritárias para esta população são Sensation (Sensação) e 
 **Visual:**
 
 - Cronômetro posicionado de forma visível na parte superior; opção mandatória de fundo branco/neutro; disposição enfileirada clara da estrutura da música.
-- **Tela estreita (26/11/2026, protótipo web):** em tela estreita ou baixa (celular em pé, janela pequena), nenhuma tela corta um botão: a tela inicial e a final rolam, e o ▶ fica sempre alcançável. *Motivo:* jogando o protótipo numa janela estreita, o orientador não achou o ▶, que ficava abaixo da borda sem rolagem.
+- **Tela estreita (26/11/2026, protótipo web):** em tela estreita ou baixa (celular em pé, janela pequena; v1.2: no PC, a janela pequena, a partir de 1024×600), nenhuma tela corta um botão: a tela inicial e a final rolam, e o ▶ fica sempre alcançável. *Motivo:* jogando o protótipo numa janela estreita, o orientador não achou o ▶, que ficava abaixo da borda sem rolagem.
 
 **Auditivo:**
 
@@ -400,7 +408,7 @@ As dimensões prioritárias para esta população são Sensation (Sensação) e 
 
 **Motor:**
 
-- Área de clique (hitbox) dos blocos deve ser generosa - **tamanho mínimo de 48x48 dp** - para acomodar variações de coordenação motora fina em telas touchscreen; tempo de resposta ao N-Back ajustável.
+- Área de clique (hitbox) dos blocos deve ser generosa - **tamanho mínimo de 48x48 dp** - para acomodar variações de coordenação motora fina em telas touchscreen (no PC, v1.2, a regra vale para o clique do mouse); tempo de resposta ao N-Back ajustável.
 - Tempo de resposta: 10 s por pergunta, numa barra que encolhe acima do Sim/Não; o mediador ajusta de 5 a 20 s. No tutorial e em S3 não há limite. Tempo esgotado: o som novo toca de novo e o tempo recomeça, sem gastar tentativa, sem alarme nem som de erro. *(Decidido pelo orientador em 26/11/2026.)*
 
 **Linguístico:**
@@ -441,12 +449,14 @@ As dimensões prioritárias para esta população são Sensation (Sensação) e 
 | Evento | Critério |
 | --- | --- |
 | Avanço de fase | Acerto consistente nos questionamentos de N-Passos no limite de tempo |
-| Regressão de fase | Aumento de erros sequenciais ou solicitação ativa da criança (retorno a opções mais fáceis para evitar ataques de frustração). No piso (60 BPM e N=1), o botão "mais fácil" não faz nada e aparece apagado (decisão do protótipo web, aprovada pelo orientador em 26/11/2026). |
+| Regressão de fase | Aumento de erros sequenciais ou solicitação ativa da criança (retorno a opções mais fáceis para evitar ataques de frustração). No piso (60 BPM e N=1), o botão "mais fácil" não faz nada e aparece apagado (decisão do protótipo web, aprovada pelo orientador em 26/11/2026). *(v1.2: a regressão por erros sequenciais é regra do backend, via API; a pedida pela criança fica no jogo.)* |
 | Limite de duração da sessão | 15 min, ajustáveis pelo mediador de 5 a 20 min; no limite, a fase em curso termina e a partida fecha na tela final, sem mensagem (decidido pelo orientador em 26/11/2026). |
 | Interrupção de sessão | Irritabilidade persistente com a dificuldade, dispersão de olhar frequente, desengajamento da tarefa ou vocalizações de recusa. |
 | Interrupção do protocolo | Sinais consistentes de sobrecarga sensorial ou recusa persistente em participar ao longo de 3 sessões consecutivas. |
 
 ### 11.3  Faixas de Fase por Perfil
+
+*(Nota v1.2: desde a decisão do orientador de 26/11/2026, a regra de adaptação é do backend, no padrão CIATEC: a entrada de cada perfil fica no jogo; a progressão, o teto da expansão e o N que não sobe em S3 são executados pelo backend, via API.)*
 
 - Suporte 1 (S1): Entrada no N-Back = 1, a 60 BPM, fase de 6 blocos. Progressão permitida até N=3 se engajado.
 
@@ -480,7 +490,7 @@ As dimensões prioritárias para esta população são Sensation (Sensação) e 
 | --- | --- | --- | --- |
 | Viabilidade real do uso domiciliar sem supervisão para perfil S2 | Risco de abandono do jogo por frustração sem mediador | Incluir testes puramente domiciliares (sem clínicos presentes) no próximo ciclo PPI | Pesquisador responsável |
 | Direitos autorais das músicas | Limita o apelo do reforçador se as músicas favoritas da criança não puderem ser usadas | Pesquisar bibliotecas de áudio royalty-free ou permissões para uso em serious games | Equipe de desenvolvimento |
-| Desempenho do jogo em tablets antigos / de baixo custo | Travamentos ou lentidão podem ser confundidos com aumento de dificuldade pela criança (como ocorreu com U2-S1 no PPI). | Realizar testes de framerate e latência de toque em dispositivos mobile de entrada. | Equipe de desenvolvimento |
+| Desempenho do jogo em tablets antigos / de baixo custo (v1.2: o dispositivo-alvo é o PC; tablets ficam fora desta versão) | Travamentos ou lentidão podem ser confundidos com aumento de dificuldade pela criança (como ocorreu com U2-S1 no PPI). | Realizar testes de framerate e latência de toque em dispositivos mobile de entrada. | Equipe de desenvolvimento |
 | Latência da comunicação Unity-FastAPI | Atrasos de rede podem dessincronizar o cronómetro do N-Back e prejudicar o tempo de reação medido do jogador. | Definir esquema de dados (JSON) leve; testar latência de rotas REST e avaliar transição para WebSockets caso necessário. | Equipe de desenvolvimento |
 
 ## 13A  HIPÓTESES PARA VALIDAÇÃO
@@ -492,7 +502,7 @@ As dimensões prioritárias para esta população são Sensation (Sensação) e 
 | H-ID | Hipótese | Guiding Principle | Será verificada no Doc 3 |
 | --- | --- | --- | --- |
 | H-01 | O feedback neutro de falha evitará o abandono prematuro por parte de usuários com baixa tolerância à frustração. | GP-02 | Sim |
-| H-02 | O uso do jogo via tela touchscreen (tablet/celular) aumentará a adesão e o tempo de uso em comparação ao Desktop. | GP-01 | Sim |
+| H-02 | O uso do jogo via tela touchscreen (tablet/celular) aumentará a adesão e o tempo de uso em comparação ao Desktop. (v1.2: o jogo desta versão é só para PC; a comparação fica para quando houver a build de toque; o registro não grava a plataforma, que é sempre o PC Windows.) | GP-01 | Sim |
 | H-03 | A opção de ouvir a música inteira ao final da partida atuará como um reforçador positivo forte o suficiente para garantir a repetição do ciclo. | GP-03 | Sim |
 | H-04 | O Modo "Treino Pré-Jogo" (Associação Direta N=0) permitirá que usuários S3 compreendam a relação de clique/toque na tela, possibilitando a futura introdução do N-Back. | GP-05 | Sim |
 
